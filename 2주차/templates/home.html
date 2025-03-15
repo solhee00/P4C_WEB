@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>빡공팟 <span>2주차 과제</span></a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for('login') }}>login</a></li>
+            <li><a href={{ url_for ('sign_up') }}>sign up</a></li>
+            <li><a href={{ url_for('del_user') }}>delete user</a></li>
+          </ul>
+        </nav>
+      </body>
+
+
+    <h2>빡공팟 2주차 과제 웹사이트 페이지 입니다 :)</h2>
+    <img src = "../static/images/cat.jpg" width="200"> <br>
+    <p> 위 사진은 img 태그 실습을 위해 적용한 고양이 사진입니다.</p>
+    <p> 해당 사이트는 1주차 과제3을 이용해 만든 사이트 입니다. </p> <br>
+    <p> 네비게이션바를 이용해 회원가입, 회원탈퇴, 로그인 화면으로 이동이 가능하며 각 기능에 따라 <span style="background-color: yellow;">uer_file.txt파일</span>에 회원 정보가 저장됩니다.</p>
+
+
+</body>
+</html>

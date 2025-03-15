@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav_logo">
+          <i class="fa-solid fa-star"></i>
+          <a href={{ url_for('home') }}>빡공팟 <span>2주차 과제</span></a>
+        </div>
+        <ul class="nav_menu">
+          <li><a href={{ url_for('login') }}>login</a></li>
+          <li><a href={{ url_for ('sign_up') }}>sign up</a></li>
+          <li><a href={{ url_for('del_user') }}>delete user</a></li>
+        </ul>
+      </nav>
+
+      admin 계정으로만 접속할 수 있는 admin 페이지 입니다. 
+
+
+
+
+</body>
+</html>
