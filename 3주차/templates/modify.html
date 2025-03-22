@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h2 class="title"> 수정하기 </h2>
+
+    <form method="post">
+
+        <table>
+        
+            <tr> <td colspan="3" style="text-align: center;"> Title </td> </tr>
+            <tr> <td> <input type="text" placeholder="제목을 입력하세요" name="title" class="title_input" value="{{ a[1] }}"> </td> </tr>
+            <tr></tr>
+            <tr> <td colspan="3" style="text-align: center;"> Comment </td></tr>
+            <tr> <td> <textarea  name="comment"> {{ a[2] }} </textarea> </td> </tr>
+        
+        </table>
+
+        <input type="submit" onclick="alert('수정정 완료')", class="r_button", value="제출"> 
+    </form>
+
+
+</body>
+</html>

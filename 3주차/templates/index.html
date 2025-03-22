@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>게시판</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h2 class="title"> 게시판 </h2>
+
+
+    <form action='/search'>
+
+        <span class="choice">
+
+            <select name="search_option">
+                <option value="title" name="title"> title </option>
+                <option value="content" name="content"> content </option>
+            </select>
+    
+            <input type="text" name='keyword' placeholder="키워드를 입력해주세요"> <input type="submit" class="search" >     
+
+        </span>
+        
+    </form>
+
+    <br> <br>
+
+    <table class="table" border ="1">
+
+        <tbody>
+            <tr> <td style="width: 50px;"> 번호 </td> <td> 제목 </td></tr>
+
+            {% for i in data %}
+            <tr> 
+                <td> {{ i[0] }} </td> 
+                <td> <a href="/view?id={{i[0]}}"> {{ i[1] }} </a>  </td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+
+    </table>
+
+    <br>
+
+    <button type="button" onclick="location.href='/write'" class="r_button">작성하기</button>
+
+    
+
+</body>
+</html>

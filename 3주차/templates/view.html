@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작성한 게시글</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="view">
+    
+    <h2 class="title"> 게시글 보기 </h2>
+
+    <form class="c">
+
+        <table>
+
+            <tr> <td> 제목 </td> <td> {{ t[1] }} </td> </tr>
+            <tr> <td> 내용 </td> <td> {{ t[2] }} </td> </tr>
+
+        </table>
+
+    </form>
+
+    <br>
+
+    <button type="button" onclick=" location.href='/modify?id={{ t[0] }}'" class="r_button"> 수정하기 </button>
+
+    <br>
+
+    <button type="button" onclick=" location.href='/delete?id={{ t[0] }}'" > 삭제 </button>
+
+</body>
+</html>
