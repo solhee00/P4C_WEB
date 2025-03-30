@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for ('logout') }}>logout</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2>프로필</h2> <br>
+
+    <div class="box">
+        <img width="200px" src="{{url_for('static', filename = 'images/'+data[5] ) }}">
+
+
+        <table>
+            
+            <tr> <td> id </td> <td> {{ data[1] }}</td></tr>
+            <tr> <td> 이름 </td> <td> {{ data[3] }}</td></tr>
+            <tr> <td> 학교 </td> <td> {{ data[4] }}</td></tr>
+
+        </table>
+
+    </div>
+    

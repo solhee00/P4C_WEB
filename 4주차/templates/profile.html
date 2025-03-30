@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for ('logout') }}>logout</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2> 내 프로필 </h2> 
+    
+    <br>
+
+    <div class="box">
+
+      <img width="200px" src="{{url_for('static', filename = 'images/'+user_data[5] ) }}">
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">업로드</button>
+
+        <table>
+
+          <tr> <td> id </td> <td> {{ user_data[1] }}</td></tr>
+          <tr> <td> 이름 </td> <td> {{ user_data[3] }}</td></tr>
+          <tr> <td> 학교 </td> <td> {{ user_data[4] }}</td></tr>
+
+        </table>
+
+      </form>
+
+      
+      <button type="button" onclick=" location.href='/profile_modify?id={{ user_data[0] }}'" class="r_button"> 이름,학교 수정하기 </button>
+
+
+
+    </div>
+
+    
+
+</body>
+</html>

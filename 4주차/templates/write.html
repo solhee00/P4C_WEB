@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>write</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for ('logout') }}>logout</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2> 게시글 작성 </h2>
+
+    <form action="/write" method="POST">
+      <table >
+      
+          <tr> <td colspan="3" style="text-align: center;"> Title </td> </tr>
+          <tr> <td> <input type="text" placeholder="제목을 입력하세요" name="title" class="title_input"> </td> </tr>
+          <tr></tr>
+          <tr> <td colspan="3" style="text-align: center;"> Contents </td></tr>
+          <tr> <td style="border: none;"> <textarea  name="contents"> </textarea> </td> </tr>
+      
+      </table>
+
+        <!-- <input type="submit" value="등록" onclick="location.href='/index'"> -->
+
+
+
+      <input type="submit" onclick="alert('작성 완료')", class="r_button", value="제출"> 
+
+    </form>
+</body>
+</html>

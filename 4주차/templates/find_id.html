@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find_id</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for('login') }}>login</a></li>
+            <li><a href={{ url_for ('sign_up') }}>sign up</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2>아이디 찾기</h2>
+
+    <div class="box">
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="이름을 입력해주세요"><br>
+            <input type="password" name="school" placeholder="학교를 입력해주세요"> <br>
+    
+            <button type="submit">아이디 찾기</button>
+        </form>
+        
+        {% if result %}
+        <p>{{ result }}</p>
+        {% endif %}
+
+
+    </div>
+
+    
+
+</body>
+</html>

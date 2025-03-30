@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for ('logout') }}>logout</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2> 게시글 보기 </h2>
+
+    <form>
+
+        <table>
+
+            <tr> <td> 제목 </td> <td> {{ t[1] }}</td></tr>
+            <tr> <td> 내용 </td> <td> {{ t[2] }}</td></tr>
+            <tr> <td> 작성자 </td> <td> {{ t[4] }}</td></tr>
+
+        </table>
+
+    </form>
+
+    <br>
+
+    <button type="button" onclick=" location.href='/post_modify?id={{ t[0] }}'" class="r_button"> 수정하기 </button>
+
+    
+</body>
+</html>

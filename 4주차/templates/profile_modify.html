@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile modify</title>
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <body>
+        <nav class="navbar">
+          <div class="nav_logo">
+            <i class="fa-solid fa-star"></i>
+            <a href={{ url_for('home') }}>게시판</a>
+          </div>
+          <ul class="nav_menu">
+            <li><a href={{ url_for ('logout') }}>logout</a></li>
+            <li><a href={{ url_for ('profile') }}>my profile</a></li>
+          </ul>
+        </nav>
+      </body>
+
+    <h2>프로필 수정</h2> <br>
+
+    <div class="box">
+
+      <img width="200px" src="{{url_for('static', filename = 'images/'+user_data[5] ) }}">
+
+      <br>
+      
+      <a>이미지 수정은 profile에서 해주세요!</a>
+
+      <form method="POST">
+        <table>
+
+          <tr> <td colspan="3"> name </td> </tr>
+            <tr> <td> <input type="text" placeholder="이름을 입력하세요" name="user_name" value="{{ user_data[3]}}"> </td> </tr>
+            <tr></tr>
+            <tr> <td colspan="3"> school </td></tr>
+            <tr> <td> <input type="text" placeholder="학교를 입력하세요" name="user_school" value="{{ user_data[4]}}"> </td> </tr>
+        
+        </table>
+
+        <input type="submit" onclick="alert('수정 완료')", value="제출"> 
+
+      </form>
+
+
+    </div>
+
+    
+
+
+</body>
+</html>
