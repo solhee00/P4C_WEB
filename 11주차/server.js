@@ -77,15 +77,10 @@ app.post('/login', async (req, res) => {
   const { user_id, user_password } = req.body;
 
   try {
-    const users = await User.findAll({
-      where: {
-        [Op.and]:[
-        literal('soundex("user_password") = soundex(:user_password)'),
-        { user_id: user_id},
-      ]
-    },
-      replacements: {user_id, user_password},
-    })
+    const users = await sequelize.query(
+  `SELECT * FROM Users WHERE soundex(user_id) = soundex('${user_id}') AND soundex(user_password) = soundex('${user_password}')`,
+  { type: sequelize.QueryTypes.SELECT }
+);
 
     if (users.length > 0) {
       res.send(`<p> 로그인 성공 ${users[0].user_id}</p>`);
