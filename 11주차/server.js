@@ -9,13 +9,13 @@ const fs = require('fs');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// DB 초기화
+
 (async () => {
   await sequelize.sync({ force: true });
   console.log('DB 생성');
 })();
 
-// DB 연결 및 테이블 생성
+
 (async () => {
   try {
     await sequelize.authenticate();
@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 })();
 
 
-// 정적 파일 서빙
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
@@ -35,7 +34,7 @@ app.get('/search', (req,res) => {
     res.sendFile(path.join(__dirname, 'views', 'search.html'))
 })
 
-// 취약한 검색 처리
+
 app.post('/search', (req, res) => {
 
     const user_id = req.body.user_id
@@ -73,11 +72,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'views','login.html'))
 });
 
-// 로그인 처리 (추후 SQL Injection 실습용)
+// 로그인 처리 
 app.post('/login', async (req, res) => {
   const { user_id, user_password } = req.body;
 
-  // 일부러 Sequelize.literal로 취약한 SQL 작성 가능
   try {
     const users = await User.findAll({
       where: {
